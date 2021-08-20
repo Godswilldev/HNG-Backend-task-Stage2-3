@@ -93,6 +93,7 @@ ul {
 .contact form button {
   border: 0;
   text-transform: uppercase;
+  cursor: pointer;
   color: #fff;
   background-image: linear-gradient(to right top, #007cf0, #00dfd8);
 }

@@ -52,7 +52,7 @@ app.post("/send", (req, res) => {
     });
 
     // send mail with defined transport object
-    let info = await transporter.sendMail({
+    await transporter.sendMail({
       from: '"Nodemailer message" <smtp.mailtrap.io>', // sender address
       to: "gimmex1@gmail.com, godswill@godswill.tech, smtp.mailtrap.io", // list of receivers
       subject: "Node Message Request", // Subject line
@@ -60,11 +60,11 @@ app.post("/send", (req, res) => {
       html: output, // html body
     });
 
-    console.log("Message sent: %s", info.messageId);
-    // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
+    // console.log("Message sent: %s", info.messageId);
+    // // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
 
-    // Preview only available when sending through an Ethereal account
-    console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+    // // Preview only available when sending through an Ethereal account
+    // console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
 
     res.render("contact", { msg: "Your message has been Sent" });
   };
